@@ -43,20 +43,20 @@
                     <p class="lead">This is Part 1.2</p>
                 </div>
                 <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-<button name="1.2.1" class="btn btn-success btn-block" data-sql="SELECT emp_id, FROM employees WHERE hire_date = 1991-05-01, LIMIT 100;" onClick="reply_click(this)">1- The number of all employees that started on 1991-05-01</button>
-<button name="1.2.2" class="btn btn-success btn-block" data-sql="SELECT emp_id, title, FROM titles, WHERE title >=2,  LIMIT 100;" onClick="reply_click(this)">2- List all emp_no who have had strictly more than 2 titles and display the total number of the titles they
+<button name="1.2.1" class="btn btn-success btn-block" data-sql="SELECT emp_id FROM employees WHERE hire_date = '1991-05-01' LIMIT 100;" onClick="reply_click(this)">1- The number of all employees that started on 1991-05-01</button>
+<button name="1.2.2" class="btn btn-success btn-block" data-sql="SELECT emp_id title FROM titles WHERE title >= '2' LIMIT 100;" onClick="reply_click(this)">2- List all emp_no who have had strictly more than 2 titles and display the total number of the titles they
                         have had.</button>
-<button name="1.2.3" class="btn btn-success btn-block" data-sql="SELECT * FROM employees, WHERE gender = F, LIMIT 100;" onClick="reply_click(this)">3- List female employees (past/current) together with all other relation attributes.</button>
-<button name="1.2.4-" class="btn btn-success btn-block" data-sql="SELECT * FROM employees WHERE last_name = Simmel AND hire_date > 1986-01-01, LIMIT 100;" onClick="reply_click(this)">4- List past/current employees hired prior to 1986-01-01 with the surname Simmel.</button>
-<button name="1.2.5 " class="btn btn-success btn-block" data-sql="SELECT UPPER (first_name),(last_name) , FROM employees, WHERE last_name LIKE `B%, ORDER BY ASC LIMIT 100;" onClick="reply_click(this)">5 -.How many past/current employees’ last name begins with the capital letter B?
+<button name="1.2.3" class="btn btn-success btn-block" data-sql="SELECT * FROM employees WHERE gender ='F' LIMIT 100;" onClick="reply_click(this)">3- List female employees (past/current) together with all other relation attributes.</button>
+<button name="1.2.4-" class="btn btn-success btn-block" data-sql="SELECT * FROM employees WHERE last_name = 'Simmel' AND hire_date > '1986-01-01' LIMIT 100;" onClick="reply_click(this)">4- List past/current employees hired prior to 1986-01-01 with the surname Simmel.</button>
+<button name="1.2.5 " class="btn btn-success btn-block" data-sql="SELECT COUNT (last_name) AS TotalWithB FROM employees WHERE upper (last_name) LIKE '%B%';" onClick="reply_click(this)">5 -.How many past/current employees’ last name begins with the capital letter B?
                         Use a column alias total with B to output your results.
                         first name and last name in alphabetical order.</button>
-<button name="1.2.6-" class="btn btn-success btn-block" data-sql="CREATE TABLE employee.emp_training(trainer_no INT NOT NULL AUTO_INCREMENT, first_name VARCHAR(30) NOT NULL, last_name VARCHAR(30) NOT NULL, t_module VARCHAR(20) NOT NULL, PRIMARY KEY(trainer_no)) ;" onClick="reply_click(this)">6- Create a new table called emp_training with 3 columns:
+<button name="1.2.6-" class="btn btn-success btn-block" data-sql="CREATE TABLE emp_training (emp_id int not null, first_name varchar (30) not null, last_name varchar(30) not null, t_module varchar (20), PRIMARY KEY (emp_id));" onClick="reply_click(this)">6- Create a new table called emp_training with 3 columns:
                             .</button>
 <button name="1.2.7-" class="btn btn-success btn-block" data-sql="INSERT INTO emp_training, (trainer_no,first_name,last_name,t_module) VALUES (default, FRED,BLOGGS,GOOGLE SHEETS) (default,JOE,BLOGGS,GOOGLE DOCS);" onClick="reply_click(this)">7- Insert 2 new rows into the emp_training table.</button>
-<button name="1.2.8-" class="btn btn-success btn-block" data-sql="DROP TABLE employee. emp_training;" onClick="reply_click(this)">8- Delete the newly created emp_training table.</button>
-<button name="1.2.9-" class="btn btn-success btn-block" data-sql="ALTER TABLE employees.employees ADD COLUMN email_address VARCHAR(20) NULL AFTER `hire_date`;" onClick="reply_click(this)">9- Alter the employees table to include an email_address field of type varchar(20).</button>
-<button name="1.2.10-" class="btn btn-success btn-block" data-sql="UPDATE employees, SET email_address = `gfacello@gmail.com`, WHERE emp_id =10001;" onClick="reply_click(this)">10- Update the email address of Georgi Facello to gfacello@gmail.com, where emp_no equals to 10001.</button>
+<button name="1.2.8-" class="btn btn-success btn-block" data-sql="DROP TABLE emp_training;" onClick="reply_click(this)">8- Delete the newly created emp_training table.</button>
+<button name="1.2.9-" class="btn btn-success btn-block" data-sql="ALTER TABLE employees ADD COLUMN email_address VARCHAR(20) NULL AFTER 'hire_date';" onClick="reply_click(this)">9- Alter the employees table to include an email_address field of type varchar(20).</button>
+<button name="1.2.10-" class="btn btn-success btn-block" data-sql="UPDATE employees SET email_address = 'gfacello@gmail.com', WHERE emp_id ='10001';" onClick="reply_click(this)">10- Update the email address of Georgi Facello to gfacello@gmail.com, where emp_no equals to 10001.</button>
 
                 </div>
                 <div class="col-lg-10 order-2 border-success">
